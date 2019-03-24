@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Navbar from './Navbar'
 import RecipeItem from './RecipeItem'
 import recipes from '../sample_data/recipes.json'
+// const [value, setValue] = useState('')
 
 class App extends Component {
   constructor(props) {
@@ -19,15 +20,22 @@ class App extends Component {
   render() { 
     return (
       <div className="App">
-      {console.log(this.state.searchString)}
         <Navbar getValue={this.getValue} value={this.state.searchString} />
         <div className="container mt-10">
           <div className="row">
-            {this.recipes.map((recipe, index) => {
-              return <RecipeItem key={index} />
-            })}
+            {
+              this.recipes.map((recipe, index) => {
+                if(recipe.title === this.state.searchString ||
+                  recipe.ingredients === this.state.searchString ||
+                  '' === this.state.searchString){
+                      return <RecipeItem key={index} />
+                }
+              })
+            }
           </div>
         </div>
+        <div>aqui: {this.state.searchString}</div>
+
       </div>
     );
   }
