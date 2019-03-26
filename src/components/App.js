@@ -14,9 +14,9 @@ class App extends Component {
 
   }
 
-  getValue = (value) =>{
-    this.setState({ searchString: value });
-  }
+  // getValue = (value) =>{
+  //   this.setState({ searchString: value });
+  // }
  
   render() { 
     return (
