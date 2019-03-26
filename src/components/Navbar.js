@@ -12,7 +12,7 @@ const Navbar = ({ value, getValue }) => {
             <div className="form-group justify-content-center row col-10 my-2">
                 <input
                     value={input}
-                    onChange={(e) => setInput(value = e.target.value)}
+                    onChange={(e) => setInput(e.target.value)}
                     className="form-control col-9 mr-2"
                     type="search"
                     placeholder="Search"
