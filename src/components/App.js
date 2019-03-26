@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Navbar from './Navbar'
 import RecipeItem from './RecipeItem'
 import recipes from '../sample_data/recipes.json'
-// const [value, setValue] = useState('')
+import helpFilter from './../helpers/filter'
 
 class App extends Component {
   constructor(props) {
@@ -11,12 +11,13 @@ class App extends Component {
     this.state = {
       searchString: ''
     };
+
   }
 
   getValue = (value) =>{
     this.setState({ searchString: value });
   }
-
+ 
   render() { 
     return (
       <div className="App">
@@ -24,18 +25,10 @@ class App extends Component {
         <div className="container mt-10">
           <div className="row">
             {
-              this.recipes.map((recipe, index) => {
-                if(recipe.title === this.state.searchString ||
-                  recipe.ingredients === this.state.searchString ||
-                  '' === this.state.searchString){
-                      return <RecipeItem key={index} />
-                }
-              })
+              helpFilter(this.recipes, this.state.searchString, RecipeItem)
             }
           </div>
         </div>
-        <div>aqui: {this.state.searchString}</div>
-
       </div>
     );
   }
