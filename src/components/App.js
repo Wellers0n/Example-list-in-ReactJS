@@ -8,13 +8,13 @@ const App = () => {
   const [searchString, setSearchString] = useState('')
   const recipesItems = recipes.results
 
-  const getValue = (value) => {
+  const setValue = (value) => {
     setSearchString(value);
   }
  
   return (
     <div className="App">
-      <Navbar getValue={getValue} value={searchString} />
+      <Navbar getValue={setValue} value={searchString} />
       <div className="container mt-10">
         <div className="row">
           {
