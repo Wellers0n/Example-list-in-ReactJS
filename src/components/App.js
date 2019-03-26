@@ -14,7 +14,7 @@ const App = () => {
  
   return (
     <div className="App">
-      <Navbar getValue={setValue} value={searchString} />
+      <Navbar setValue={setValue} value={searchString} />
       <div className="container mt-10">
         <div className="row">
           {
