@@ -1,13 +1,13 @@
 import React from 'react'
 
-const RecipeItem = () => (
+const RecipeItem = ({title, ingredients, thumbnail, link}) => (
     <div className="col-sm-3 mt-4">
         <div className="card">
-            <img className="card-img-top img-fluid" src="https://via.placeholder.com/350x300" alt="" />
+            <img className="card-img-top img-contain" src={thumbnail} alt="" />
             <div className="card-body">
-                <h5 className="card-title">TITLE HERE</h5>
+                <h5 className="card-title">{title}</h5>
                 <p className="card-text">
-                    <strong>Ingredients: </strong>INGREDIENTS HERE
+                    <strong>Ingredients: </strong>{ingredients}
                 </p>
             </div>
         </div>

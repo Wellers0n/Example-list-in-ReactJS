@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import Navbar from './Navbar'
 import RecipeItem from './RecipeItem'
 import recipes from '../sample_data/recipes.json'
